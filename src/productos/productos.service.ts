@@ -22,8 +22,12 @@ export class ProductosService {
     return this.productoRepository.find();
   }
 
-  findOne(id: number) {
-    return this.productoRepository.findOneBy({ id });
+  async findOne(id: number) {
+    const aux = await this.productoRepository.findOneBy({ id });
+    if (aux == null) {
+      throw new HttpException('Not Found', HttpStatus.NOT_FOUND);
+    }
+    return aux;
   }
 
   update(id: number, updateProductoDto: UpdateProductoDto) {
@@ -31,13 +35,12 @@ export class ProductosService {
     return this.productoRepository.findOneBy({ id });
   }
 
-  remove(id: number) {
-    const producto = this.productoRepository.findOneBy({ id });
-    if (!producto) {
+  async remove(id: number) {
+    const producto = await this.productoRepository.findOneBy({ id });
+    if (producto == null) {
       throw new HttpException('Not Found', HttpStatus.NOT_FOUND);
     } else {
-      this.productoRepository.delete(id);
-      return `This action removes a #${id} producto`;
+      return this.productoRepository.delete({ id });
     }
   }
 }
