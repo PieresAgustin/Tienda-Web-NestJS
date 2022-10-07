@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Producto } from 'src/productos/entities/producto.entity';
 import { Repository } from 'typeorm';
@@ -22,8 +22,12 @@ export class BrandsService {
     return this.brandRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} brand`;
+  async findOne(brand_id: number) {
+    const aux = await this.brandRepository.findOneBy({ brand_id });
+    if (aux == null) {
+      throw new HttpException('Not Found', HttpStatus.NOT_FOUND);
+    }
+    return aux;
   }
 
   update(id: number, updateBrandDto: UpdateBrandDto) {
