@@ -35,7 +35,12 @@ export class BrandsService {
     return this.brandRepository.findOneBy({ brand_id });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} brand`;
+  async remove(brand_id: number) {
+    const producto = await this.brandRepository.findOneBy({ brand_id });
+    if (producto == null) {
+      throw new HttpException('Not Found', HttpStatus.NOT_FOUND);
+    } else {
+      return this.brandRepository.delete({ brand_id });
+    }
   }
 }
