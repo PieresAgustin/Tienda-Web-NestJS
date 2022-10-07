@@ -30,8 +30,9 @@ export class BrandsService {
     return aux;
   }
 
-  update(id: number, updateBrandDto: UpdateBrandDto) {
-    return `This action updates a #${id} brand`;
+  update(brand_id: number, updateBrandDto: UpdateBrandDto) {
+    this.brandRepository.update(brand_id, updateBrandDto);
+    return this.brandRepository.findOneBy({ brand_id });
   }
 
   remove(id: number) {
