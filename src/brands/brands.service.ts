@@ -14,7 +14,8 @@ export class BrandsService {
   ) {}
 
   create(createBrandDto: CreateBrandDto) {
-    return 'This action adds a new brand';
+    const brand: Brand = this.brandRepository.create(createBrandDto);
+    return this.brandRepository.save(brand);
   }
 
   findAll() {
