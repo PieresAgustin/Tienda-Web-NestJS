@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ProductosModule } from './productos/productos.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Producto } from './productos/entities/producto.entity';
+import { BrandsModule } from './brands/brands.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { Producto } from './productos/entities/producto.entity';
       synchronize: true,
     }),
     ProductosModule,
+    BrandsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
