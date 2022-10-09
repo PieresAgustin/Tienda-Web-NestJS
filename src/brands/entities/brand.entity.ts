@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Producto } from 'src/productos/entities/producto.entity';
 
 @Entity()
 export class Brand {
@@ -6,5 +7,5 @@ export class Brand {
   brand_id: number;
 
   @Column()
-  name: string;
+  marca: string;
 }

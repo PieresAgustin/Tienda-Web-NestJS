@@ -19,7 +19,7 @@ export class ProductosService {
   }
 
   findAll() {
-    return this.productoRepository.find();
+    return this.productoRepository.find({ relations: ['brand'] });
   }
 
   async findOne(id: number) {
