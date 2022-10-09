@@ -8,4 +8,7 @@ export class Brand {
 
   @Column()
   marca: string;
+
+  @OneToMany(() => Producto, (producto) => producto.brand)
+  productos: Producto[];
 }

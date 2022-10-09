@@ -16,6 +16,9 @@ export class Producto {
   tipo: string;
 
   @Column()
+  name: string;
+
+  @Column()
   talle: string;
 
   @Column()
@@ -23,4 +26,8 @@ export class Producto {
 
   @Column()
   precio: number;
+
+  @ManyToOne(() => Brand, (brand) => brand.productos)
+  @JoinColumn({ name:'marcaID'})
+  brand: Brand;
 }
