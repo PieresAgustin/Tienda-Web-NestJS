@@ -23,7 +23,7 @@ export class ProductosService {
   }
 
   async findOne(id: number) {
-    const aux = await this.productoRepository.findOneBy({ id });
+    const aux = await this.productoRepository.findOne({ where:{id},relations: ['brand'] });
     if (aux == null) {
       throw new HttpException('Not Found', HttpStatus.NOT_FOUND);
     }
@@ -32,7 +32,7 @@ export class ProductosService {
 
   update(id: number, updateProductoDto: UpdateProductoDto) {
     this.productoRepository.update(id, updateProductoDto);
-    return this.productoRepository.findOneBy({ id });
+    return this.productoRepository.findOne({ where:{id},relations: ['brand'] });
   }
 
   async remove(id: number) {
