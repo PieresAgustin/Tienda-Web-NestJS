@@ -27,7 +27,9 @@ export class Producto {
   @Column()
   precio: number;
 
-  @ManyToOne(() => Brand, (brand) => brand.productos)
+  @ManyToOne(() => Brand, (brand) => brand.productos,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name:'marcaID'})
   brand: Brand;
 }
