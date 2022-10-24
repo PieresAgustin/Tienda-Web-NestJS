@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ProductosModule } from './productos/productos.module';
+import { ProductsModule } from './products/product.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Producto } from './productos/entities/producto.entity';
+import { Product } from './products/entities/product.entity';
 import { BrandsModule } from './brands/brands.module';
 import { Brand } from './brands/entities/brand.entity';
 
@@ -17,10 +17,10 @@ import { Brand } from './brands/entities/brand.entity';
       username: 'agustin',
       password: '12345',
       database: 'Tienda',
-      entities: [Producto, Brand],
+      entities: [Product, Brand],
       synchronize: true,
     }),
-    ProductosModule,
+    ProductsModule,
     BrandsModule,
   ],
   controllers: [AppController],

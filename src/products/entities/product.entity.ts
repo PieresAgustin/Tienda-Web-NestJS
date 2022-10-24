@@ -8,28 +8,31 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class Producto {
+export class Product {
   @PrimaryGeneratedColumn()
   id: number;
-
-  @Column()
-  tipo: string;
 
   @Column()
   name: string;
 
   @Column()
-  talle: string;
+  type: string;
+
+  @Column()
+  waist: string;
 
   @Column()
   color: string;
 
   @Column()
-  precio: number;
+  stock: number
 
-  @ManyToOne(() => Brand, (brand) => brand.productos,{
-    onDelete: 'CASCADE'
+  @Column()
+  price: number;
+
+  @ManyToOne(() => Brand, (brand) => brand.productos, {
+    onDelete: 'CASCADE',
   })
-  @JoinColumn({ name:'marcaID'})
+  @JoinColumn({ name: 'marcaID' })
   brand: Brand;
 }
