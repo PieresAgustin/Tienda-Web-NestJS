@@ -969,10 +969,10 @@
   "resolved" "https://registry.npmjs.org/@types/mime/-/mime-3.0.1.tgz"
   "version" "3.0.1"
 
-"@types/node@*", "@types/node@^16.0.0":
-  "integrity" "sha512-z5hPTlVFzNwtJ2LNozTpJcD1Cu44c4LNuzaq1mwxmiHWQh2ULdR6Vjwo1UGldzRpzL0yUEdZddnfqGW2G70z6Q=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-16.11.64.tgz"
-  "version" "16.11.64"
+"@types/node@*", "@types/node@^16.11.68":
+  "integrity" "sha512-JkRpuVz3xCNCWaeQ5EHLR/6woMbHZz/jZ7Kmc63AkU+1HxnoUugzSWMck7dsR4DvNYX8jp9wTi9K7WvnxOIQZQ=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-16.11.68.tgz"
+  "version" "16.11.68"
 
 "@types/parse-json@^4.0.0":
   "integrity" "sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA=="
