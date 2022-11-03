@@ -1,9 +1,13 @@
 export class CreateProductDto {
   id: number;
-  tipo: string;
   name: string;
-  talle: string;
+  tipo: string;
+  waist: string;
   color: string;
-  precio: number;
+  stock: number;
+  price: number;
+  image: string;
+  quantity: number;
+  clearance: boolean;
   idmarca: number;
 }
