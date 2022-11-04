@@ -32,6 +32,9 @@ export class Product {
   
   @Column()
   image: string;
+  
+  @Column()
+  quantity: number;
 
   @Column()
   clearance:boolean;
