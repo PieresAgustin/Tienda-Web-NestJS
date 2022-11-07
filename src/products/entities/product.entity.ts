@@ -33,7 +33,7 @@ export class Product {
   @Column()
   image: string;
   
-  @Column()
+  @Column({default: 0})
   quantity: number;
 
   @Column()
@@ -45,7 +45,7 @@ export class Product {
   @JoinColumn({ name: 'marcaID' })
   brand: Brand;
 
-  constructor(id:number, name:string, type:string, waist:string, color:string, stock:number, price:number, image:string, clearance:boolean){
+  constructor(id:number, name:string, type:string, waist:string, color:string, stock:number, price:number, image:string, quantity:number, clearance:boolean){
     this.id = id;
     this.name = name;
     this.type = type;
@@ -54,6 +54,7 @@ export class Product {
     this.stock = stock;
     this.price = price;
     this.image = image;
+    this.quantity = quantity;
     this.clearance = clearance;
   }
 }
