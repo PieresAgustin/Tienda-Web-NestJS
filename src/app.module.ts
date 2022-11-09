@@ -7,16 +7,19 @@ import { Product } from './products/entities/product.entity';
 import { BrandsModule } from './brands/brands.module';
 import { Brand } from './brands/entities/brand.entity';
 
+const db_options = {
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT || '5432'),
+  username: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+}
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: process.env.DATABASE_URL,
-      host: 'localhost',
-      port: 5432,
-      username: 'agustin',
-      password: '12345',
-      database: 'Tienda',
+      ...db_options,
       entities: [Product, Brand],
       synchronize: true,
     }),
