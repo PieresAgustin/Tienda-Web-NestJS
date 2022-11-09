@@ -13,31 +13,31 @@ export class Product {
   id: number;
 
   @Column()
-  name: string;
+  public name: string;
 
   @Column()
-  type: string;
+  public type: string;
 
   @Column()
-  waist: string;
+  public waist: string;
 
   @Column()
-  color: string;
+  public color: string;
 
   @Column()
-  stock: number
+  public stock: number
 
   @Column()
-  price: number;
+  public price: number;
   
   @Column()
-  image: string;
+  public image: string;
   
-  @Column({default: 0})
-  quantity: number;
+  @Column()
+  public quantity: number;
 
   @Column()
-  clearance:boolean;
+  public clearance:boolean;
 
   @ManyToOne(() => Brand, (brand) => brand.productos, {
     onDelete: 'CASCADE',
