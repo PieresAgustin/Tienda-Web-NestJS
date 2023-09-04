@@ -7,6 +7,9 @@ import { Product } from './products/entities/product.entity';
 import { BrandsModule } from './brands/brands.module';
 import { Brand } from './brands/entities/brand.entity';
 
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 const db_options = {
   host: process.env.DB_HOST,
   port: parseInt(process.env.DB_PORT || '5432'),
