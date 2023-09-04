@@ -1,18 +1,28 @@
 version: '3'
 services:
+  nest:
+    image: agus-nestjs:latest
+    volumes:
+      - '.:/opt/tienda' 
+    ports:
+      - 3000:3000
+    working_dir: '/opt/tienda'  
+
   postgres:
     image: 'postgres:latest'
     restart: always
     volumes:
       - './postgres_data:/var/lib/postgresql/data'
+    env_file:
+      - .env
     environment:
-      - POSTGRES_USER=agustin
-      - POSTGRES_DB=Tienda
-      - POSTGRES_PASSWORD=12345
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
       - '5432:5432'
 
   adminer:
-    image: 'adminer:latest'
+    image: adminer:latest
     ports:
-      - '8080:8080'
+      - 8080:8080
