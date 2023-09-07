@@ -1,15 +1,27 @@
 version: '3'
 services:
-  nest:
-    image: agus-nestjs:latest
+  
+  front:
+    image: agus-angular
+    container_name: frontend
+    ports:
+      - 4200:4200
+    volumes:
+      - .:/opt/app
+    working_dir: '/opt/app'
+  
+  back:
+    image: pagustin/agus-nestjs
+    container_name: backend
     volumes:
       - '.:/opt/tienda' 
     ports:
       - 3000:3000
     working_dir: '/opt/tienda'  
 
-  postgres:
+  database:
     image: 'postgres:latest'
+    container_name: database
     restart: always
     volumes:
       - './postgres_data:/var/lib/postgresql/data'
