@@ -1,17 +1,8 @@
 version: '3'
 services:
-  
-  # front:
-  #   image: agus-angular
-  #   container_name: frontend
-  #   volumes:
-  #     - .:/app
-  #   ports:
-  #    - 4200:80
    
   back:
-    image: agus-nestjs
-    container_name: backend
+    build: .
     volumes:
       - '.:/opt/tienda' 
     ports:
@@ -19,7 +10,6 @@ services:
 
   database:
     image: 'postgres:latest'
-    container_name: database
     restart: always
     volumes:
       - './postgres_data:/var/lib/postgresql/data'
