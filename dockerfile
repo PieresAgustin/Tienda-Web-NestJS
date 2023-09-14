@@ -1,12 +1,17 @@
 FROM node:18-alpine
 
+ENV DB_USER agustin
+ENV DB_HOST database
+ENV DB_NAME Tienda
+ENV DB_PASSWORD 12345
+ENV DB_PORT 5432
+    
 WORKDIR /opt/tienda
 
 COPY package*.json /
 
 RUN npm install 
 COPY . .
-RUN npm run build
 
 EXPOSE 3000
-ENTRYPOINT ["npm", "run", "start:dev"]
+CMD ["npm", "run", "start:dev"]

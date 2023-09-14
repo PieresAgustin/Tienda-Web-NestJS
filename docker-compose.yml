@@ -1,23 +1,21 @@
 version: '3'
 services:
   
-  front:
-    image: agus-angular
-    container_name: frontend
-    ports:
-      - 4200:4200
-    volumes:
-      - .:/opt/app
-    working_dir: '/opt/app'
-  
+  # front:
+  #   image: agus-angular
+  #   container_name: frontend
+  #   volumes:
+  #     - .:/app
+  #   ports:
+  #    - 4200:80
+   
   back:
-    image: pagustin/agus-nestjs
+    image: agus-nestjs
     container_name: backend
     volumes:
       - '.:/opt/tienda' 
     ports:
       - 3000:3000
-    working_dir: '/opt/tienda'  
 
   database:
     image: 'postgres:latest'
@@ -34,7 +32,7 @@ services:
     ports:
       - '5432:5432'
 
-  adminer:
-    image: adminer:latest
-    ports:
-      - 8080:8080
+  # adminer:
+  #   image: adminer:latest
+  #   ports:
+  #     - 8080:8080
