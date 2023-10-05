@@ -1,16 +1,5 @@
 {
-    "sqltools.connections": [
-        {
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "name": "Tienda-Web",
-            "database": "Tienda",
-            "username": "agustin",
-            "password": "12345"
-        }
-    ],
+    "sqltools.connections": [],
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#2f7c47",
         "activityBar.background": "#2f7c47",
