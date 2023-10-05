@@ -13,8 +13,7 @@ export class ProductsService {
   ) {}
 
   create(createProductDto: CreateProductDto) {
-    const product: Product =
-      this.productsRepository.create(createProductDto);
+    const product: Product = this.productsRepository.create(createProductDto);
     return this.productsRepository.save(product);
   }
 
@@ -23,7 +22,10 @@ export class ProductsService {
   }
 
   async findOne(id: number) {
-    const aux = await this.productsRepository.findOne({ where:{id},relations: ['brand'] });
+    const aux = await this.productsRepository.findOne({
+      where: { id },
+      relations: ['brand'],
+    });
     if (aux == null) {
       throw new HttpException('Not Found', HttpStatus.NOT_FOUND);
     }
@@ -32,7 +34,10 @@ export class ProductsService {
 
   update(id: number, updateProductDto: UpdateProductDto) {
     this.productsRepository.update(id, updateProductDto);
-    return this.productsRepository.findOne({ where:{id},relations: ['brand'] });
+    return this.productsRepository.findOne({
+      where: { id },
+      relations: ['brand'],
+    });
   }
 
   async remove(id: number) {

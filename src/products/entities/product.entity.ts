@@ -25,19 +25,19 @@ export class Product {
   public color: string;
 
   @Column()
-  public stock: number
+  public stock: number;
 
   @Column()
   public price: number;
-  
+
   @Column()
   public image: string;
-  
+
   @Column()
   public quantity: number;
 
   @Column()
-  public clearance:boolean;
+  public clearance: boolean;
 
   @ManyToOne(() => Brand, (brand) => brand.productos, {
     onDelete: 'CASCADE',
@@ -45,7 +45,18 @@ export class Product {
   @JoinColumn({ name: 'marcaID' })
   brand: Brand;
 
-  constructor(id:number, name:string, type:string, waist:string, color:string, stock:number, price:number, image:string, quantity:number, clearance:boolean){
+  constructor(
+    id: number,
+    name: string,
+    type: string,
+    waist: string,
+    color: string,
+    stock: number,
+    price: number,
+    image: string,
+    quantity: number,
+    clearance: boolean,
+  ) {
     this.id = id;
     this.name = name;
     this.type = type;
