@@ -9,7 +9,7 @@ env:
 
 jobs:
   tests:
-    uses: pieresagustin/tienda-web-nestjs/.github/workflows/tests.yml@main
+    uses: ./.github/workflows/tests.yml
 
   build:
     runs-on: ubuntu-latest
