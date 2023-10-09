@@ -1,0 +1,16 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: Ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Call deploy hook
+        uses: wei/curl@master
+        with: 
+          arg: ${{secrets.RENDER_DEPLOY_HOOK_URL }}
