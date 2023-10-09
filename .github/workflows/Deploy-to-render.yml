@@ -13,4 +13,4 @@ jobs:
       - name: Call deploy hook
         uses: wei/curl@master
         with: 
-          arg: ${{secrets.RENDER_DEPLOY_HOOK_URL }}
+          args: ${{secrets.RENDER_DEPLOY_HOOK_URL }}
