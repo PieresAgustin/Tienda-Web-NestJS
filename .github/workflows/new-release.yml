@@ -8,7 +8,7 @@ env:
   NAME: pagustin/agus-nestjs
 
 jobs:
-  run-tests:
+  tests:
     uses: pieresagustin/tienda-web-nestjs/.github/workflows/tests.yml@main
 
   build:
