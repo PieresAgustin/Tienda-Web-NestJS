@@ -1,10 +1,10 @@
 FROM node:20-alpine
 
-ENV DB_USER agustin
-ENV DB_HOST database
-ENV DB_NAME Tienda
-ENV DB_PASSWORD 12345
-ENV DB_PORT 5432
+ENV DB_USER=agustin \
+    DB_HOST=database \
+    DB_NAME=Tienda \
+    DB_PASSWORD=12345 \
+    DB_PORT=5432
     
 WORKDIR /opt/tienda
 
