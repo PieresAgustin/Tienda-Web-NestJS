@@ -62,6 +62,6 @@ describe('ProductsController', () => {
 
   it('Should find a product by an ID', async () => {
     const result = await controller.findOne('1');
-    expect(result).toBeInstanceOf(FootballTeam),
+    expect(result).toEqual(productsMock.products);
   });
 });
