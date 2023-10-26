@@ -60,10 +60,8 @@ describe('ProductsController', () => {
     expect(controller).toBeDefined();
   });
 
-  // it('Should find a product by an ID', async () => {
-  //   const result = await controller.findOne('1');
-  //   expect(result).toContain(productsMock.products{
-  //     id:1
-  //   }),
-  // });
+  it('Should find a product by an ID', async () => {
+    const result = await controller.findOne('1');
+    expect(result).toBeInstanceOf(FootballTeam),
+  });
 });
