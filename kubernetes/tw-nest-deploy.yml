@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: nest-deploy
+   labels:
+      app: nest
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+         app: nest
+   template:
+      metadata:
+         labels:
+            app: nest
+      spec:
+         containers:
+          - name: api
+            image: pagustin/agus-nestjs 
+            env:
+            - name: DB_HOST
+              value: motty.db.elephantsql.com
+            - name: DB_USER
+              value: kkrueccm
+            - name: DB_NAME
+              value: kkrueccm
+            - name: DB_PASSWORD
+              value: Tw_VNtwtq0gIhMfIIO2Yi26kDyU0kIM5
+            - name: DB_PORT
+              value: "5432"
+            ports:
+            - containerPort: 3000
+
