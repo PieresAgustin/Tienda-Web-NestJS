@@ -25,7 +25,10 @@ spec:
             - name: DB_NAME
               value: kkrueccm
             - name: DB_PASSWORD
-              value: Tw_VNtwtq0gIhMfIIO2Yi26kDyU0kIM5
+              alueFrom:
+                secretKeyRef:
+                  name: db-pass
+                  key: password
             - name: DB_PORT
               value: "5432"
             ports:

@@ -15,6 +15,15 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Kubernetes
+
+Para realizar el deploy agregar un secret con la password de la Database.
+
+```bash
+$ kubectl create secret generic db-pass \
+  --from-literal=password="<secreto>"
+```
+
 ## Installation
 
 ```bash
