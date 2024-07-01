@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:22-alpine
 
 ENV DB_USER=agustin \
     DB_HOST=database \
